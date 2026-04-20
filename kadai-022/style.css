@@ -1,0 +1,79 @@
+h1,p,body{
+    margin: 0;
+}
+p,a{
+    font-size: 20px;
+}
+header{
+    /* 下の余白を20pxに指定 */
+    margin-bottom: 20px;
+    /* 中央揃えに指定 */
+    text-align: center;
+    background-color: rgb(244, 79, 79)
+}
+h1{
+    /* 文字色を白に指定 */
+    color: rgb(255, 255, 255);
+}
+main{
+    /* 上下左右の余白 */
+    padding: 10px;
+}
+#parent{
+    display: flex;
+    /* 一番左と一番右のアイテムも含め、均等な間隔で配置 */
+    justify-content: space-around;
+}
+.contents{
+    border: 3px solid rgb(238, 204,204);
+    flex-basis: 25%;
+    /* 要素”内”の余白指定 */
+    padding: 10px 15px;
+    /* 要素”外”の余白設定 */
+    margin: 20px 0;
+    /* 中の要素を中央構に指定 */
+    text-align: center;
+}
+h2{
+    font-size: 25px;
+    /* 下線（太さ3px、点線、色rgb(236, 122, 122）を指定 */
+    border-bottom: 3px dotted rgb(236, 122, 122)
+}
+/* h2要素の前に「●」記号を表示 */
+h2::before{
+    content: "⚫︎";
+    color: rgb(97, 206, 249);
+}
+/* contents内の二番目のp要素内のテキストの中で一番目の文字にのみ装飾指定 */
+.contents p:nth-of-type(2)::first-letter{
+    font-weight: bold;
+    color: rgb(97,206, 249);
+}
+.contents image{
+    margin: 10px 0;
+    width: 70%;
+}
+footer{
+    background-color: rgb(244, 79, 79);
+    text-align: center;
+}
+/* 訪問済みリンクの文字色がrgb(193, 234, 251)に変化するよう指定 */
+footer a:visited{
+    color: rgb(193, 234, 251);
+}
+/* マウスカーソルが乗ると文字色がrgb(245, 178, 168)に変化するよう指定 */
+footer a:hover{
+    color: rgb(245, 178, 168);
+}
+@media screen and (max-width: 768px) {
+    h2{
+        font-size: 30px;
+    }
+    p{
+        font-size: 25px;
+    }
+    /* Flexboxコンテナであるid名parent内の要素が縦に並ぶよう指定 */
+    #parent{
+        flex-direction: column;
+    }
+}
